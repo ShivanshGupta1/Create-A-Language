@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <% var result1 = false %>
+    <% for(i=0;i<result.length;i++){%>
+  
+        <% if(result[i].email == person.email){ %>
+               <h2>User FOUND!</h2>
+ 
+               <h1>Transalate from English to Your Language</h1>
+               <h2 style="display: none;" id="lang"><%= result[i].characters %></h2>
+    <input id="4" type="text" placeholder="hello" />
+    <button id="5" type="submit">Submit</button>
+    <h1 id="6"></h1>
+    <h1>
+      Transalate from Your Language to English (Please give spaces between each
+      character!)
+    </h1>
+    <input id="7" type="text" placeholder="8 1 5 2 73 (Please give spaces)" />
+    <button id="8" type="submit">Submit</button>
+    <h1 id="9"></h1>
+
+    
+    <h1 style="display: none;"> <%= result1 = true %></h1>
+<% } %>
+      
+  
+    <%}%>  
+   <% if(result1 == false){ %>
+    <h2>User Not Found! Please create a language at the home page!</h2>
+<% } %>
+    
+<script>
+    var lang = document.getElementById("lang").innerHTML
+    lang = lang.split(" ")
+     var e = document.getElementById("4");
+    var f = document.getElementById("5");
+    var g = document.getElementById("6");
+    var h = document.getElementById("7");
+    var n = document.getElementById("8");
+    var ll = document.getElementById("9");
+    var letters = [
+      [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+      ],
+      [],
+    ];
+
+ 
+      if (lang.length == 26) {
+        for (var i = 0; i < lang.length; i++) {
+          letters[1].push(lang[i]);
+        }
+      
+      }
+   
+    f.addEventListener("click", () => {
+      var k = e.value.split("");
+      var word = "";
+      for (var j = 0; j < k.length; j++) {
+        for (var i = 0; i < letters[0].length; i++) {
+          if (letters[0][i] == k[j]) {
+            word += letters[1][i] + " ";
+          }
+        }
+      }
+      g.innerHTML = "Transalation - " + word;
+    });
+    n.addEventListener("click", () => {
+      var m = h.value.split(" ");
+      var word2 = "";
+      for (var j = 0; j < m.length; j++) {
+        for (var i = 0; i < letters[0].length; i++) {
+          if (letters[1][i] == m[j]) {
+            word2 += letters[0][i] + " ";
+          }
+        }
+      }
+      ll.innerHTML = "Transalation - " + word2;
+    });
+    
+</script>
+</body>
+</html>
